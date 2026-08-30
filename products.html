@@ -1,0 +1,3743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products – Velisse Intimates</title>
+    <meta name="description"
+        content="Shop the full Velisse Intimates collection – sport bras, leggings, activewear sets, lace bras, bodysuits and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+/* ── RESET & BASE ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f0a14;
+  color: #f0e8f5;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+}
+
+/* ── CSS VARIABLES ── */
+:root {
+  --plum: #2d1a3e;
+  --plum-mid: #4a1a42;
+  --rose: #c06090;
+  --rose-light: #e8a0c8;
+  --pink-pale: #f5d5e8;
+  --gold: #d4a060;
+  --text: #f0e8f5;
+  --text-muted: #b090b8;
+  --bg: #0f0a14;
+  --bg2: #1a1020;
+  --card-bg: #1e1228;
+  --border: rgba(200, 100, 160, 0.20);
+  --grad: linear-gradient(135deg, #e870b0 0%, #c060f0 60%, #806ae0 100%);
+}
+
+/* ── UTILITIES ── */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f070c0, #a060e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────── NAVBAR ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
+}
+
+.navbar.scrolled {
+  background: rgba(15, 10, 20, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.logo-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--rose-light);
+  line-height: 1;
+}
+
+.logo-v em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.logo-text {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.logo-text strong {
+  color: var(--text);
+  letter-spacing: 0.2em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-cta {
+  background: var(--grad) !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  color: white !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  transition: opacity 0.2s, transform 0.2s !important;
+  white-space: nowrap;
+}
+
+.nav-cta:hover {
+  opacity: 0.87;
+  transform: scale(1.03) !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ─────────────────────────────── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: radial-gradient(ellipse 80% 60% at 70% 40%, #4a1060 0%, #1a0a28 55%, #0f0a14 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: float 8s ease-in-out infinite;
+}
+
+.blob1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #c06090 0%, transparent 70%);
+  top: -150px;
+  right: 5%;
+  animation-delay: 0s;
+}
+
+.blob2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #6040b0 0%, transparent 70%);
+  bottom: -100px;
+  left: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+.hero-content {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(192, 96, 144, 0.15);
+  border: 1px solid var(--border);
+  color: var(--rose-light);
+  padding: 7px 18px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.tag {
+  padding: 8px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.25s;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tag:hover {
+  border-color: var(--rose);
+  color: var(--rose-light);
+  background: rgba(192, 96, 144, 0.12);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  background: var(--grad);
+  color: white;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 30px rgba(192, 96, 144, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(192, 96, 144, 0.5);
+}
+
+.btn-ghost {
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.25s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--rose);
+  background: rgba(192, 96, 144, 0.1);
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-num {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+/* Hero image */
+.hero-right {
+  position: relative;
+}
+
+.hero-img-wrapper {
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 24px;
+  display: block;
+  object-fit: cover;
+  max-height: 520px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.hero-float-card {
+  position: absolute;
+  background: rgba(30, 18, 40, 0.88);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: floatCard 4s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card1 {
+  top: 30px;
+  left: -20px;
+  animation-delay: 0s;
+}
+
+.card2 {
+  bottom: 40px;
+  right: -20px;
+  animation-delay: 2s;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-sub {
+  font-size: 0.7rem;
+  color: var(--rose-light);
+}
+
+@keyframes floatCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--rose), transparent);
+  border-radius: 2px;
+}
+
+.scroll-indicator p {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0)
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(6px)
+  }
+}
+
+/* ─────────────────────────────── MARQUEE ─── */
+.marquee-strip {
+  background: var(--grad);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 40px;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ─────────────────────────────── SECTION COMMON ─── */
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────── CATEGORIES ─── */
+.categories {
+  padding: 100px 0;
+  background: var(--bg2);
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.cat-card--large {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.cat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+  position: relative;
+}
+
+.cat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(192, 96, 144, 0.5);
+  box-shadow: 0 20px 50px rgba(192, 96, 144, 0.2);
+}
+
+.cat-visual {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-card--large .cat-visual {
+  height: 260px;
+}
+
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.cat-card:hover .cat-img {
+  transform: scale(1.08);
+}
+
+.cat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 10, 20, 0.1) 0%, rgba(15, 10, 20, 0.55) 100%);
+  pointer-events: none;
+}
+
+.cat-icon-wrap {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.15));
+}
+
+.cat-card--large .cat-icon-wrap {
+  width: 100px;
+  height: 100px;
+}
+
+.cat-info {
+  padding: 18px 20px;
+}
+
+.cat-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.cat-card--large .cat-info h3 {
+  font-size: 1.2rem;
+}
+
+.cat-info p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.cat-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--rose-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cat-link:hover {
+  color: white;
+}
+
+.cat-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--grad);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+}
+
+/* ─────────────────────────────── PRODUCTS ─── */
+.collections {
+  padding: 100px 0;
+  background: var(--bg);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(192, 96, 144, 0.2);
+  border-color: rgba(192, 96, 144, 0.4);
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.product-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s;
+}
+
+.product-card:hover .product-img-placeholder {
+  transform: scale(1.05);
+}
+
+.product-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-photo {
+  transform: scale(1.07);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--grad);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.product-badge.new {
+  background: linear-gradient(135deg, #50c090, #308060);
+}
+
+.product-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.product-card:hover .product-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(15, 10, 20, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.action-btn:hover {
+  background: rgba(192, 96, 144, 0.2);
+  border-color: var(--rose);
+}
+
+.product-info {
+  padding: 18px;
+}
+
+.product-brand {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--rose);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.product-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.product-rating {
+  font-size: 0.8rem;
+  color: #f0b040;
+  margin-bottom: 10px;
+}
+
+.product-rating span {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.price-new {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.price-old {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.product-colors {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.color-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-dot:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px var(--rose);
+}
+
+.btn-add-cart {
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  letter-spacing: 0.04em;
+}
+
+.btn-add-cart:hover {
+  background: var(--grad);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(192, 96, 144, 0.3);
+}
+
+.view-all-wrap {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.btn-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.btn-view-all span {
+  transition: transform 0.2s;
+}
+
+.btn-view-all:hover {
+  border-color: var(--rose);
+  background: rgba(192, 96, 144, 0.1);
+  color: var(--rose-light);
+}
+
+.btn-view-all:hover span {
+  transform: translateX(5px);
+}
+
+/* ─────────────────────────────── WHY ─── */
+.why {
+  padding: 100px 0;
+  background: var(--bg2);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(192, 96, 144, 0.15);
+}
+
+.why-icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.why-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─────────────────────────────── DEAL BANNER ─── */
+.deal-banner {
+  padding: 100px 0;
+  background: radial-gradient(ellipse 80% 60% at 30% 50%, #3a1060 0%, #0f0a14 70%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.deal-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.deal-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 14px;
+}
+
+.deal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.deal-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.deal-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.deal-form input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.deal-form input:focus {
+  border-color: var(--rose);
+}
+
+.deal-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.btn-subscribe {
+  background: var(--grad);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-subscribe:hover {
+  opacity: 0.87;
+  transform: scale(1.03);
+}
+
+.deal-fine {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Countdown */
+.deal-countdown {
+  margin-bottom: 36px;
+}
+
+.countdown-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.countdown-boxes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cd-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.cd-box span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.cd-box small {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+  display: block;
+}
+
+.cd-colon {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--rose);
+}
+
+.deal-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perk {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.perk::before {
+  content: '';
+  display: none;
+}
+
+/* ─────────────────────────────── TESTIMONIALS ─── */
+.testimonials {
+  padding: 100px 0;
+  background: var(--bg);
+}
+
+.testi-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  overflow: hidden;
+}
+
+.testi-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+
+.testi-stars {
+  color: #f0b040;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.testi-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.testi-role {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.testi-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--rose);
+}
+
+/* ─────────────────────────────── FOOTER ─── */
+.footer {
+  background: #080510;
+  border-top: 1px solid var(--border);
+  padding: 80px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 60px;
+}
+
+.footer-logo {
+  margin-bottom: 16px;
+}
+
+.footer-logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.social-btn:hover {
+  border-color: var(--rose);
+  color: var(--rose-light);
+  background: rgba(192, 96, 144, 0.1);
+}
+
+.footer-col h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--rose-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.payment-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.pay-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* ─────────────────────────────── TOAST ─── */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: linear-gradient(135deg, #2d1a3e, #4a1a42);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  color: var(--text);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 2000;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ─────────────────────────────── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testi-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .hero-img {
+    max-height: 320px;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cat-card--large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .deal-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-float-card {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testi-track {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-card--large {
+    grid-column: span 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deal-form {
+    flex-direction: column;
+  }
+
+  .countdown-boxes {
+    gap: 6px;
+  }
+
+  .cd-box {
+    padding: 14px 16px;
+    min-width: 60px;
+  }
+
+  .cd-box span {
+    font-size: 1.6rem;
+  }
+}
+
+/* ── PAGE HERO BANNER ── */
+.page-hero {
+  position: relative;
+  padding: 160px 0 60px;
+  background: radial-gradient(ellipse 80% 60% at 70% 20%, #4a1060 0%, #1a0a28 55%, #0f0a14 100%);
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(192, 96, 144, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.page-hero-inner {
+  position: relative;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--rose-light);
+}
+
+.breadcrumb span:last-child {
+  color: var(--text);
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.page-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ── SHOP LAYOUT ── */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  padding-top: 48px;
+  padding-bottom: 100px;
+  align-items: start;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.clear-filters {
+  background: none;
+  border: none;
+  color: var(--rose-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clear-filters:hover {
+  color: var(--text);
+}
+
+.filter-group {
+  margin-bottom: 28px;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.filter-opt:hover {
+  color: var(--text);
+}
+
+.filter-opt input[type="checkbox"],
+.filter-opt input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--rose);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filter-opt span:first-of-type {
+  flex: 1;
+}
+
+.opt-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Price range */
+.price-range {
+  padding-top: 4px;
+}
+
+.range-slider {
+  width: 100%;
+  accent-color: var(--rose);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+#priceVal {
+  color: var(--rose-light);
+  font-weight: 600;
+}
+
+/* Size grid */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.size-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 0;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-btn:hover {
+  border-color: var(--rose);
+  color: var(--text);
+}
+
+.size-btn.active {
+  background: var(--grad);
+  border-color: transparent;
+  color: white;
+}
+
+/* Color filter */
+.color-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.color-filter-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.color-filter-dot:hover {
+  transform: scale(1.12);
+}
+
+.color-filter-dot.active {
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--rose);
+}
+
+.rating-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── PRODUCT AREA / TOOLBAR ── */
+.product-area {
+  min-width: 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-toggle-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.results-count {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.results-count span {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sort-select {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 4px;
+}
+
+.view-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.view-btn.active {
+  background: var(--grad);
+  color: white;
+}
+
+/* Active filter tags */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.active-filters:empty {
+  display: none;
+}
+
+.filter-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(192, 96, 144, 0.15);
+  border: 1px solid var(--border);
+  color: var(--rose-light);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.filter-tag button {
+  background: none;
+  border: none;
+  color: var(--rose-light);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* ── PRODUCTS GRID (shop page cards) ── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.products-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.p-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.p-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(192, 96, 144, 0.2);
+  border-color: rgba(192, 96, 144, 0.4);
+}
+
+.p-card.featured {
+  border-color: rgba(212, 160, 96, 0.5);
+}
+
+.p-img-wrap {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.p-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.p-card:hover .p-img {
+  transform: scale(1.06);
+}
+
+.p-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.p-badge {
+  background: var(--grad);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.p-badge.new {
+  background: linear-gradient(135deg, #50c090, #308060);
+}
+
+.p-badge.sale {
+  background: linear-gradient(135deg, #e05070, #b03050);
+}
+
+.p-badge.set {
+  background: linear-gradient(135deg, #d4a060, #a87838);
+}
+
+.p-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.p-card:hover .p-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.p-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(15, 10, 20, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.p-action-btn:hover {
+  background: rgba(192, 96, 144, 0.25);
+  border-color: var(--rose);
+}
+
+.p-info {
+  padding: 18px;
+}
+
+.p-brand {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--rose);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.p-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.p-rating {
+  font-size: 0.8rem;
+  color: #f0b040;
+  margin-bottom: 10px;
+}
+
+.p-rating span {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.p-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.p-price-new {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.p-price-old {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.p-colors {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.p-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.p-dot:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px var(--rose);
+}
+
+.p-cart-btn {
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  letter-spacing: 0.04em;
+}
+
+.p-cart-btn:hover {
+  background: var(--grad);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(192, 96, 144, 0.3);
+}
+
+/* List view row layout */
+.products-grid.list-view .p-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.products-grid.list-view .p-img-wrap {
+  height: 100%;
+}
+
+.products-grid.list-view .p-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.no-results.hidden {
+  display: none;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.no-results h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.no-results p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.no-results button {
+  background: none;
+  border: none;
+  color: var(--rose-light);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ── PAGINATION ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 56px;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-btn:hover {
+  border-color: var(--rose);
+  color: var(--text);
+}
+
+.page-btn.active {
+  background: var(--grad);
+  border-color: transparent;
+  color: white;
+}
+
+.page-dots {
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+
+/* ── QUICK VIEW MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 5, 16, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quick-view-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: min(880px, 92vw);
+  max-height: 86vh;
+  overflow-y: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+}
+
+.quick-view-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(15, 10, 20, 0.8);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(192, 96, 144, 0.25);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modal-img-wrap {
+  position: relative;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 24px 0 0 24px;
+}
+
+.modal-img-thumbs {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+.modal-info {
+  padding: 36px 32px;
+}
+
+.modal-brand {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--rose);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.modal-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.modal-rating {
+  font-size: 0.85rem;
+  color: #f0b040;
+  margin-bottom: 14px;
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.modal-section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.modal-colors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.modal-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.msz {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.msz:hover {
+  border-color: var(--rose);
+  color: var(--text);
+}
+
+.msz.active {
+  background: var(--grad);
+  border-color: transparent;
+  color: white;
+}
+
+.modal-qty-row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 8px 18px;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 20px;
+}
+
+.modal-cart-btn {
+  flex: 1;
+  background: var(--grad);
+  border: none;
+  color: white;
+  padding: 14px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.modal-cart-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.modal-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ── FOOTER STRIP ── */
+.footer-strip {
+  background: #080510;
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.footer-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.strip-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.footer-strip-inner p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.strip-home {
+  padding: 10px 24px;
+  font-size: 0.85rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 84vw;
+    border-radius: 0;
+    z-index: 1500;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .filter-toggle-btn {
+    display: flex;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-img {
+    border-radius: 24px 24px 0 0;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid.list-view .p-card {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .modal-info {
+    padding: 24px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="Velisse Intimates Logo" class="nav-logo-img" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="products.html">Products</a></li>
+                <li><a href="index.html#collections">Collections</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#why">About</a></li>
+                <li><a href="index.html#cta" class="nav-cta">Shop Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── PAGE HERO BANNER ── -->
+    <div class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="container page-hero-inner">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>All Products</span>
+            </nav>
+            <h1 class="page-title">All <span class="gradient-text">Collections</span></h1>
+            <p class="page-sub">Discover our full range of premium intimates &amp; activewear</p>
+        </div>
+    </div>
+
+    <!-- ── MAIN CONTENT ── -->
+    <div class="shop-layout container" id="shopLayout">
+
+        <!-- SIDEBAR FILTERS -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Filters</h3>
+                <button class="clear-filters" id="clearFilters">Clear All</button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-group">
+                <h4 class="filter-title">Category</h4>
+                <div class="filter-options">
+                    <label class="filter-opt">
+                        <input type="checkbox" name="cat" value="all" checked id="cat-all" />
+                        <span>All Products</span>
+                        <span class="opt-count">24</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="checkbox" name="cat" value="sport-bra" id="cat-sport" />
+                        <span>Sport Bras</span>
+                        <span class="opt-count">6</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="checkbox" name="cat" value="leggings" id="cat-leg" />
+                        <span>Leggings</span>
+                        <span class="opt-count">5</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="checkbox" name="cat" value="set" id="cat-set" />
+                        <span>Activewear Sets</span>
+                        <span class="opt-count">4</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="checkbox" name="cat" value="bra" id="cat-bra" />
+                        <span>Bras</span>
+                        <span class="opt-count">5</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="checkbox" name="cat" value="body" id="cat-body" />
+                        <span>Bodysuits</span>
+                        <span class="opt-count">4</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="filter-group">
+                <h4 class="filter-title">Price Range</h4>
+                <div class="price-range">
+                    <input type="range" id="priceRange" min="0" max="120" value="120" class="range-slider" />
+                    <div class="price-labels">
+                        <span>$0</span>
+                        <span id="priceVal">Up to $120</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Size Filter -->
+            <div class="filter-group">
+                <h4 class="filter-title">Size</h4>
+                <div class="size-grid">
+                    <button class="size-btn active" data-size="xs">XS</button>
+                    <button class="size-btn" data-size="s">S</button>
+                    <button class="size-btn" data-size="m">M</button>
+                    <button class="size-btn" data-size="l">L</button>
+                    <button class="size-btn" data-size="xl">XL</button>
+                    <button class="size-btn" data-size="2xl">2XL</button>
+                    <button class="size-btn" data-size="3xl">3XL</button>
+                    <button class="size-btn" data-size="4xl">4XL</button>
+                </div>
+            </div>
+
+            <!-- Color Filter -->
+            <div class="filter-group">
+                <h4 class="filter-title">Color</h4>
+                <div class="color-filter-row">
+                    <button class="color-filter-dot active" style="background:#1a1a1a" title="Black"
+                        data-color="black"></button>
+                    <button class="color-filter-dot" style="background:#ffffff;border:2px solid #444" title="White"
+                        data-color="white"></button>
+                    <button class="color-filter-dot" style="background:#c06090" title="Rose" data-color="rose"></button>
+                    <button class="color-filter-dot" style="background:#2d1a3e" title="Plum" data-color="plum"></button>
+                    <button class="color-filter-dot" style="background:#f5d5c0" title="Nude" data-color="nude"></button>
+                    <button class="color-filter-dot" style="background:#e8d0c0" title="Beige"
+                        data-color="beige"></button>
+                    <button class="color-filter-dot" style="background:#1a1a2e" title="Midnight"
+                        data-color="midnight"></button>
+                </div>
+            </div>
+
+            <!-- Rating Filter -->
+            <div class="filter-group">
+                <h4 class="filter-title">Rating</h4>
+                <div class="rating-filters">
+                    <label class="filter-opt">
+                        <input type="radio" name="rating" value="any" checked /> <span>Any Rating</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="radio" name="rating" value="4" /> <span>★★★★☆ & Up</span>
+                    </label>
+                    <label class="filter-opt">
+                        <input type="radio" name="rating" value="5" /> <span>★★★★★ Only</span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- PRODUCT AREA -->
+        <div class="product-area">
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <button class="filter-toggle-btn" id="filterToggle">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="4" y1="6" x2="20" y2="6" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                            <line x1="11" y1="18" x2="13" y2="18" />
+                        </svg>
+                        Filters
+                    </button>
+                    <p class="results-count">Showing <span id="resultCount">24</span> products</p>
+                </div>
+                <div class="toolbar-right">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="view-btn active" id="viewGrid" title="Grid view">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="3" y="3" width="7" height="7" rx="1" />
+                                <rect x="14" y="3" width="7" height="7" rx="1" />
+                                <rect x="3" y="14" width="7" height="7" rx="1" />
+                                <rect x="14" y="14" width="7" height="7" rx="1" />
+                            </svg>
+                        </button>
+                        <button class="view-btn" id="viewList" title="List view">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="3" y="3" width="18" height="4" rx="1" />
+                                <rect x="3" y="10" width="18" height="4" rx="1" />
+                                <rect x="3" y="17" width="18" height="4" rx="1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Filters Tags -->
+            <div class="active-filters" id="activeFilters"></div>
+
+            <!-- Product Grid -->
+            <div class="products-grid" id="productsGrid">
+
+                <!-- 1 Seamless Sports Bra -->
+                <div class="p-card" data-cat="sport-bra" data-price="34.99" data-rating="5" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80&fit=crop&crop=top"
+                            alt="Seamless Sports Bra" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge sale">-30%</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(0)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Sport</p>
+                        <h3 class="p-name">Seamless Sports Bra</h3>
+                        <div class="p-rating">★★★★★ <span>(128)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$34.99</span>
+                            <span class="p-price-old">$49.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#2d1a3e"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#1a1a2e"></span>
+                            <span class="p-dot" style="background:#d4a0a0"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 2 High-Waist Sculpt Leggings -->
+                <div class="p-card" data-cat="leggings" data-price="52.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80&fit=crop&crop=top"
+                            alt="High-Waist Sculpt Leggings" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(1)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Active</p>
+                        <h3 class="p-name">High-Waist Sculpt Leggings</h3>
+                        <div class="p-rating">★★★★★ <span>(214)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$52.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a2e"></span>
+                            <span class="p-dot" style="background:#5a1a45"></span>
+                            <span class="p-dot" style="background:#e8d5c0"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 3 Activewear 2-Piece Set -->
+                <div class="p-card" data-cat="set" data-price="79.99" data-rating="4" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80&fit=crop&crop=top"
+                            alt="Activewear 2-Piece Set" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge set">Set</span>
+                            <span class="p-badge sale">-27%</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(2)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Luxe</p>
+                        <h3 class="p-name">Activewear 2-Piece Set</h3>
+                        <div class="p-rating">★★★★☆ <span>(87)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$79.99</span>
+                            <span class="p-price-old">$110.00</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#3d1a3a"></span>
+                            <span class="p-dot" style="background:#e0d0c0"></span>
+                            <span class="p-dot" style="background:#2a2a40"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 4 Wireless T-Shirt Bra -->
+                <div class="p-card" data-cat="bra" data-price="28.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=80&fit=crop&crop=top"
+                            alt="Wireless T-Shirt Bra" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(3)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Classic</p>
+                        <h3 class="p-name">Wireless T-Shirt Bra</h3>
+                        <div class="p-rating">★★★★★ <span>(302)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$28.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#f5d5c0"></span>
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#fff;border:1px solid #555"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 5 Plunge Bodysuit -->
+                <div class="p-card" data-cat="body" data-price="44.99" data-rating="5" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&q=80&fit=crop&crop=top"
+                            alt="Plunge Bodysuit" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge sale">Hot</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(4)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Luxe</p>
+                        <h3 class="p-name">Plunge Bodysuit</h3>
+                        <div class="p-rating">★★★★★ <span>(96)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$44.99</span>
+                            <span class="p-price-old">$59.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#c8a090"></span>
+                            <span class="p-dot" style="background:#5a1a45"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 6 Lace Push-Up Bra -->
+                <div class="p-card" data-cat="bra" data-price="38.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1590503554950-8f77c48041fb?w=600&q=80&fit=crop&crop=top"
+                            alt="Lace Push-Up Bra" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(5)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Lace</p>
+                        <h3 class="p-name">Lace Push-Up Bra</h3>
+                        <div class="p-rating">★★★★★ <span>(179)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$38.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#f0b0b0"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#e8d5c0"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 7 Seamless Comfort Set -->
+                <div class="p-card" data-cat="set" data-price="64.99" data-rating="5" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=600&q=80&fit=crop&crop=top"
+                            alt="Seamless Comfort Set" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge sale">-25%</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(6)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Active</p>
+                        <h3 class="p-name">Seamless Comfort Set</h3>
+                        <div class="p-rating">★★★★★ <span>(143)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$64.99</span>
+                            <span class="p-price-old">$85.00</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#e8d0c0"></span>
+                            <span class="p-dot" style="background:#1a1a2e"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 8 High-Waist Shaper Brief -->
+                <div class="p-card" data-cat="body" data-price="32.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=600&q=80&fit=crop&crop=top"
+                            alt="High-Waist Shaper Brief" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(7)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Shape</p>
+                        <h3 class="p-name">High-Waist Shaper Brief</h3>
+                        <div class="p-rating">★★★★★ <span>(221)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$32.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#e8c8a0"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 9 Longline Sports Bra -->
+                <div class="p-card" data-cat="sport-bra" data-price="42.99" data-rating="5" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&fit=crop&crop=top"
+                            alt="Longline Sports Bra" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(8)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Sport</p>
+                        <h3 class="p-name">Longline Sports Bra</h3>
+                        <div class="p-rating">★★★★★ <span>(167)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$42.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#2d1a3e"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 10 Ribbed Midi Leggings -->
+                <div class="p-card" data-cat="leggings" data-price="47.99" data-rating="4" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1534482421-64566f976cfa?w=600&q=80&fit=crop&crop=top"
+                            alt="Ribbed Midi Leggings" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge sale">-20%</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(9)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Active</p>
+                        <h3 class="p-name">Ribbed Midi Leggings</h3>
+                        <div class="p-rating">★★★★☆ <span>(94)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$47.99</span>
+                            <span class="p-price-old">$59.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#e8d0c0"></span>
+                            <span class="p-dot" style="background:#5a1a45"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 11 Strappy Back Sports Bra -->
+                <div class="p-card" data-cat="sport-bra" data-price="37.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80&fit=crop&crop=top"
+                            alt="Strappy Back Sports Bra" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(10)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Sport</p>
+                        <h3 class="p-name">Strappy Back Sports Bra</h3>
+                        <div class="p-rating">★★★★★ <span>(203)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$37.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#e8d5c0"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 12 Velvet Touch Bralette -->
+                <div class="p-card" data-cat="bra" data-price="29.99" data-rating="5" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1608626597747-0d787b75ef61?w=600&q=80&fit=crop&crop=top"
+                            alt="Velvet Touch Bralette" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge sale">-15%</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(11)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Lace</p>
+                        <h3 class="p-name">Velvet Touch Bralette</h3>
+                        <div class="p-rating">★★★★★ <span>(118)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$29.99</span>
+                            <span class="p-price-old">$34.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#5a1a45"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 13 Premium 3-Piece Bundle -->
+                <div class="p-card featured" data-cat="set" data-price="99.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=600&q=80&fit=crop&crop=top"
+                            alt="Premium 3-Piece Bundle" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">Bundle</span>
+                            <span class="p-badge sale">Save $40</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(12)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Luxe</p>
+                        <h3 class="p-name">Premium 3-Piece Bundle</h3>
+                        <div class="p-rating">★★★★★ <span>(341)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$99.99</span>
+                            <span class="p-price-old">$139.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#2d1a3e"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#e8d0c0"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 14 Mesh Panel Leggings -->
+                <div class="p-card" data-cat="leggings" data-price="55.99" data-rating="4" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=80&fit=crop&crop=top"
+                            alt="Mesh Panel Leggings" class="p-img" />
+                        <div class="p-badges">
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(13)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Active</p>
+                        <h3 class="p-name">Mesh Panel Leggings</h3>
+                        <div class="p-rating">★★★★☆ <span>(72)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$55.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#2d1a3e"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 15 Sculpt Bodysuit -->
+                <div class="p-card" data-cat="body" data-price="58.99" data-rating="5" data-new="true">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1614447498149-0acdc20a80fc?w=600&q=80&fit=crop&crop=top"
+                            alt="Sculpt Bodysuit" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge new">New</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(14)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Shape</p>
+                        <h3 class="p-name">Sculpt Bodysuit</h3>
+                        <div class="p-rating">★★★★★ <span>(154)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$58.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#e8c8a0"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                            <span class="p-dot" style="background:#2d1a3e"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- 16 Everyday Comfort Bra -->
+                <div class="p-card" data-cat="bra" data-price="26.99" data-rating="5" data-new="false">
+                    <div class="p-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1611042553365-9b101441c135?w=600&q=80&fit=crop&crop=top"
+                            alt="Everyday Comfort Bra" class="p-img" />
+                        <div class="p-badges">
+                            <span class="p-badge sale">Bestseller</span>
+                        </div>
+                        <div class="p-actions">
+                            <button class="p-action-btn wishlist-btn" title="Add to Wishlist">♡</button>
+                            <button class="p-action-btn" title="Quick View" onclick="openQuick(15)">👁</button>
+                        </div>
+                    </div>
+                    <div class="p-info">
+                        <p class="p-brand">Velisse Classic</p>
+                        <h3 class="p-name">Everyday Comfort Bra</h3>
+                        <div class="p-rating">★★★★★ <span>(489)</span></div>
+                        <div class="p-price-row">
+                            <span class="p-price-new">$26.99</span>
+                        </div>
+                        <div class="p-colors">
+                            <span class="p-dot" style="background:#f5d5c0"></span>
+                            <span class="p-dot" style="background:#1a1a1a"></span>
+                            <span class="p-dot" style="background:#fff;border:1px solid #555"></span>
+                            <span class="p-dot" style="background:#c06090"></span>
+                        </div>
+                        <button class="p-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div><!-- /products-grid -->
+
+            <!-- No results -->
+            <div class="no-results hidden" id="noResults">
+                <div class="no-results-icon">🔍</div>
+                <h3>No products found</h3>
+                <p>Try adjusting your filters or <button onclick="resetAllFilters()">clear all filters</button></p>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination reveal">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-dots">…</span>
+                <button class="page-btn">8</button>
+            </div>
+        </div><!-- /product-area -->
+    </div><!-- /shop-layout -->
+
+    <!-- ── QUICK VIEW MODAL ── -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeQuick()"></div>
+    <div class="quick-view-modal" id="quickModal">
+        <button class="modal-close" onclick="closeQuick()">✕</button>
+        <div class="modal-grid">
+            <div class="modal-img-wrap">
+                <img src="" alt="" id="modalImg" class="modal-img" />
+                <div class="modal-img-thumbs" id="modalThumbs"></div>
+            </div>
+            <div class="modal-info">
+                <p class="modal-brand" id="modalBrand"></p>
+                <h2 class="modal-name" id="modalName"></h2>
+                <div class="modal-rating" id="modalRating"></div>
+                <div class="modal-price" id="modalPrice"></div>
+                <p class="modal-desc" id="modalDesc"></p>
+                <div class="modal-section-label">Color</div>
+                <div class="modal-colors" id="modalColors"></div>
+                <div class="modal-section-label">Size</div>
+                <div class="modal-sizes" id="modalSizes">
+                    <button class="msz active">XS</button>
+                    <button class="msz">S</button>
+                    <button class="msz">M</button>
+                    <button class="msz">L</button>
+                    <button class="msz">XL</button>
+                    <button class="msz">2XL</button>
+                </div>
+                <div class="modal-qty-row">
+                    <div class="qty-control">
+                        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                        <span id="qtyVal">1</span>
+                        <button class="qty-btn" onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="modal-cart-btn" id="modalCartBtn">Add to Cart</button>
+                </div>
+                <div class="modal-perks">
+                    <span>🚚 Free shipping over $50</span>
+                    <span>🔁 30-day returns</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MINI CART TOAST ── -->
+    <div class="toast" id="toast">🛍️ Added to cart!</div>
+
+    <!-- Footer strip -->
+    <div class="footer-strip">
+        <div class="container footer-strip-inner">
+            <img src="logo.jpg" alt="Velisse Intimates" class="strip-logo" />
+            <p>© 2026 Velisse Intimates. All rights reserved.</p>
+            <a href="index.html" class="btn-ghost strip-home">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+// ── NAVBAR SCROLL ──────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── REVEAL ON SCROLL ───────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ── COUNTDOWN TIMER ────────────────────────────────────────────
+function startCountdown(hours, mins, secs) {
+  const hEl = document.getElementById('cd-h');
+  const mEl = document.getElementById('cd-m');
+  const sEl = document.getElementById('cd-s');
+  if (!hEl || !mEl || !sEl) return; // countdown markup not present on this page
+
+  let total = hours * 3600 + mins * 60 + secs;
+
+  function tick() {
+    if (total <= 0) { total = 0; }
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+    hEl.textContent = String(h).padStart(2, '0');
+    mEl.textContent = String(m).padStart(2, '0');
+    sEl.textContent = String(s).padStart(2, '0');
+    total--;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+startCountdown(8, 42, 19);
+
+// ── SUBSCRIBE FORM ─────────────────────────────────────────────
+function handleSubscribe(e) {
+  e.preventDefault();
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4500);
+  document.getElementById('email-input').value = '';
+}
+
+// ── ADD TO CART BUTTONS ────────────────────────────────────────
+document.querySelectorAll('.btn-add-cart').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const orig = this.textContent;
+    this.textContent = '✓ Added!';
+    this.style.background = 'linear-gradient(135deg,#50c090,#308060)';
+    this.style.borderColor = 'transparent';
+    setTimeout(() => {
+      this.textContent = orig;
+      this.style.background = '';
+      this.style.borderColor = '';
+    }, 1800);
+  });
+});
+
+// ── TESTIMONIAL DOTS (mobile hint) ────────────────────────────
+function scrollTesti(index) {
+  document.querySelectorAll('.testi-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+}
+
+// ── HAMBURGER MENU ─────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger && navLinks) {
+hamburger.addEventListener('click', () => {
+  const open = navLinks.style.display === 'flex';
+  navLinks.style.display = open ? 'none' : 'flex';
+  navLinks.style.flexDirection = 'column';
+  navLinks.style.position = 'absolute';
+  navLinks.style.top = '100%';
+  navLinks.style.left = '0';
+  navLinks.style.right = '0';
+  navLinks.style.background = 'rgba(15,10,20,0.97)';
+  navLinks.style.padding = '20px 24px';
+  navLinks.style.borderBottom = '1px solid var(--border)';
+  navLinks.style.gap = '20px';
+});
+}
+
+// ── SMOOTH PARALLAX ON HERO BLOBS ─────────────────────────────
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  const blob1 = document.querySelector('.blob1');
+  const blob2 = document.querySelector('.blob2');
+  if (blob1) blob1.style.transform = `translate(${x * 0.7}px, ${y * 0.7}px)`;
+  if (blob2) blob2.style.transform = `translate(${-x * 0.5}px, ${-y * 0.5}px)`;
+});
+/* ────────────────────────────────────────────
+   PRODUCT DATA (mirrors the cards in products.html)
+──────────────────────────────────────────── */
+const PRODUCTS = [
+  { name: "Seamless Sports Bra", brand: "Velisse Sport", price: 34.99, oldPrice: 49.99, rating: 5, reviews: 128, cat: "sport-bra", colors: ["#2d1a3e", "#c06090", "#1a1a2e", "#d4a0a0"], img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&fit=crop&crop=top", desc: "Buttery-soft seamless knit with medium support, perfect for everything from yoga to HIIT." },
+  { name: "High-Waist Sculpt Leggings", brand: "Velisse Active", price: 52.99, oldPrice: null, rating: 5, reviews: 214, cat: "leggings", colors: ["#1a1a2e", "#5a1a45", "#e8d5c0"], img: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80&fit=crop&crop=top", desc: "Squat-proof, sculpting compression fabric with a wide waistband that stays put." },
+  { name: "Activewear 2-Piece Set", brand: "Velisse Luxe", price: 79.99, oldPrice: 110.00, rating: 4, reviews: 87, cat: "set", colors: ["#c06090", "#3d1a3a", "#e0d0c0", "#2a2a40"], img: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=80&fit=crop&crop=top", desc: "Matching bra and legging set in a buttery ribbed fabric, designed to move with you." },
+  { name: "Wireless T-Shirt Bra", brand: "Velisse Classic", price: 28.99, oldPrice: null, rating: 5, reviews: 302, cat: "bra", colors: ["#f5d5c0", "#1a1a1a", "#ffffff", "#c06090"], img: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80&fit=crop&crop=top", desc: "Smooth, seamless cups with no wire dig-in, invisible under fitted tees." },
+  { name: "Plunge Bodysuit", brand: "Velisse Luxe", price: 44.99, oldPrice: 59.99, rating: 5, reviews: 96, cat: "body", colors: ["#1a1a1a", "#c8a090", "#5a1a45"], img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80&fit=crop&crop=top", desc: "Sculpting plunge bodysuit with adjustable straps and snap closures." },
+  { name: "Lace Push-Up Bra", brand: "Velisse Lace", price: 38.99, oldPrice: null, rating: 5, reviews: 179, cat: "bra", colors: ["#1a1a1a", "#f0b0b0", "#c06090", "#e8d5c0"], img: "https://images.unsplash.com/photo-1590503554950-8f77c48041fb?w=800&q=80&fit=crop&crop=top", desc: "Delicate floral lace with light push-up padding and adjustable straps." },
+  { name: "Seamless Comfort Set", brand: "Velisse Active", price: 64.99, oldPrice: 85.00, rating: 5, reviews: 143, cat: "set", colors: ["#e8d0c0", "#1a1a2e", "#c06090"], img: "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800&q=80&fit=crop&crop=top", desc: "All-day comfort set built from a four-way stretch seamless knit." },
+  { name: "High-Waist Shaper Brief", brand: "Velisse Shape", price: 32.99, oldPrice: null, rating: 5, reviews: 221, cat: "body", colors: ["#1a1a1a", "#e8c8a0", "#c06090"], img: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=80&fit=crop&crop=top", desc: "Smoothing high-waist brief that shapes without rolling down." },
+  { name: "Longline Sports Bra", brand: "Velisse Sport", price: 42.99, oldPrice: null, rating: 5, reviews: 167, cat: "sport-bra", colors: ["#1a1a1a", "#c06090", "#2d1a3e"], img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&fit=crop&crop=top", desc: "Extended-length band for extra coverage and support during high-impact training." },
+  { name: "Ribbed Midi Leggings", brand: "Velisse Active", price: 47.99, oldPrice: 59.99, rating: 4, reviews: 94, cat: "leggings", colors: ["#1a1a1a", "#e8d0c0", "#5a1a45"], img: "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=800&q=80&fit=crop&crop=top", desc: "Cropped ribbed leggings with a soft matte finish, great for layering." },
+  { name: "Strappy Back Sports Bra", brand: "Velisse Sport", price: 37.99, oldPrice: null, rating: 5, reviews: 203, cat: "sport-bra", colors: ["#1a1a1a", "#c06090", "#e8d5c0"], img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80&fit=crop&crop=top", desc: "Statement strappy back detail with removable padding for a custom fit." },
+  { name: "Velvet Touch Bralette", brand: "Velisse Lace", price: 29.99, oldPrice: 34.99, rating: 5, reviews: 118, cat: "bra", colors: ["#1a1a1a", "#c06090", "#5a1a45"], img: "https://images.unsplash.com/photo-1608626597747-0d787b75ef61?w=800&q=80&fit=crop&crop=top", desc: "Soft velvet-touch bralette, wire-free with a lightly padded cup." },
+  { name: "Premium 3-Piece Bundle", brand: "Velisse Luxe", price: 99.99, oldPrice: 139.99, rating: 5, reviews: 341, cat: "set", colors: ["#2d1a3e", "#c06090", "#e8d0c0"], img: "https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=800&q=80&fit=crop&crop=top", desc: "Our bestselling bundle: bra, legging and bodysuit in coordinating tones." },
+  { name: "Mesh Panel Leggings", brand: "Velisse Active", price: 55.99, oldPrice: null, rating: 4, reviews: 72, cat: "leggings", colors: ["#1a1a1a", "#2d1a3e"], img: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&q=80&fit=crop&crop=top", desc: "Ventilated mesh panels at the calf keep you cool during longer sessions." },
+  { name: "Sculpt Bodysuit", brand: "Velisse Shape", price: 58.99, oldPrice: null, rating: 5, reviews: 154, cat: "body", colors: ["#1a1a1a", "#e8c8a0", "#c06090", "#2d1a3e"], img: "https://images.unsplash.com/photo-1614447498149-0acdc20a80fc?w=800&q=80&fit=crop&crop=top", desc: "Firm-hold sculpting bodysuit with a comfortable scoop back." },
+  { name: "Everyday Comfort Bra", brand: "Velisse Classic", price: 26.99, oldPrice: null, rating: 5, reviews: 489, cat: "bra", colors: ["#f5d5c0", "#1a1a1a", "#ffffff", "#c06090"], img: "https://images.unsplash.com/photo-1611042553365-9b101441c135?w=800&q=80&fit=crop&crop=top", desc: "Our most-loved everyday bra: breathable, tagless and endlessly comfortable." }
+];
+
+const SIZES = ["XS", "S", "M", "L", "XL", "2XL"];
+
+/* ────────────────────────────────────────────
+   STATE
+──────────────────────────────────────────── */
+let state = {
+  cats: new Set(["all"]),
+  maxPrice: 120,
+  rating: "any",
+  sort: "featured",
+  view: "grid"
+};
+
+let quickQty = 1;
+let quickSizeIdx = 0;
+let quickProduct = null;
+
+/* ────────────────────────────────────────────
+   INIT
+──────────────────────────────────────────── */
+document.addEventListener("DOMContentLoaded", () => {
+  initRevealAnimations();
+  initFilters();
+  initPriceRange();
+  initSizeButtons();
+  initColorFilters();
+  initSort();
+  initViewToggle();
+  initSidebarToggle();
+  initWishlist();
+  initCartButtons();
+  initModalSizeQty();
+});
+
+/* ────────────────────────────────────────────
+   REVEAL ON SCROLL
+──────────────────────────────────────────── */
+function initRevealAnimations() {
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  els.forEach((el) => io.observe(el));
+}
+
+/* ────────────────────────────────────────────
+   CATEGORY FILTERS
+──────────────────────────────────────────── */
+function initFilters() {
+  const boxes = document.querySelectorAll('input[name="cat"]');
+  boxes.forEach((box) => {
+    box.addEventListener("change", () => {
+      if (box.value === "all") {
+        boxes.forEach((b) => { if (b.value !== "all") b.checked = false; });
+        state.cats = new Set(["all"]);
+      } else {
+        document.getElementById("cat-all").checked = false;
+        state.cats.delete("all");
+        if (box.checked) state.cats.add(box.value);
+        else state.cats.delete(box.value);
+        if (state.cats.size === 0) {
+          document.getElementById("cat-all").checked = true;
+          state.cats.add("all");
+        }
+      }
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('input[name="rating"]').forEach((r) => {
+    r.addEventListener("change", () => {
+      state.rating = r.value;
+      applyFilters();
+    });
+  });
+
+  const clearBtn = document.getElementById("clearFilters");
+  if (clearBtn) clearBtn.addEventListener("click", resetAllFilters);
+}
+
+function resetAllFilters() {
+  state = { cats: new Set(["all"]), maxPrice: 120, rating: "any", sort: state.sort, view: state.view };
+
+  document.querySelectorAll('input[name="cat"]').forEach((b) => (b.checked = b.value === "all"));
+  document.querySelectorAll('input[name="rating"]').forEach((r) => (r.checked = r.value === "any"));
+
+  const priceRange = document.getElementById("priceRange");
+  if (priceRange) priceRange.value = 120;
+  const priceVal = document.getElementById("priceVal");
+  if (priceVal) priceVal.textContent = "Up to $120";
+
+  document.querySelectorAll(".size-btn").forEach((b, i) => b.classList.toggle("active", i === 0));
+  document.querySelectorAll(".color-filter-dot").forEach((d, i) => d.classList.toggle("active", i === 0));
+
+  applyFilters();
+}
+
+/* ────────────────────────────────────────────
+   PRICE RANGE
+──────────────────────────────────────────── */
+function initPriceRange() {
+  const priceRange = document.getElementById("priceRange");
+  const priceVal = document.getElementById("priceVal");
+  if (!priceRange) return;
+
+  priceRange.addEventListener("input", () => {
+    state.maxPrice = Number(priceRange.value);
+    priceVal.textContent = state.maxPrice >= 120 ? "Up to $120" : `Up to $${state.maxPrice}`;
+    applyFilters();
+  });
+}
+
+/* ────────────────────────────────────────────
+   SIZE / COLOR (visual filter toggles)
+──────────────────────────────────────────── */
+function initSizeButtons() {
+  document.querySelectorAll(".size-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+    });
+  });
+}
+
+function initColorFilters() {
+  document.querySelectorAll(".color-filter-dot").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      dot.classList.toggle("active");
+    });
+  });
+}
+
+/* ────────────────────────────────────────────
+   SORT
+──────────────────────────────────────────── */
+function initSort() {
+  const sortSelect = document.getElementById("sortSelect");
+  if (!sortSelect) return;
+  sortSelect.addEventListener("change", () => {
+    state.sort = sortSelect.value;
+    applyFilters();
+  });
+}
+
+/* ────────────────────────────────────────────
+   VIEW TOGGLE (grid / list)
+──────────────────────────────────────────── */
+function initViewToggle() {
+  const gridBtn = document.getElementById("viewGrid");
+  const listBtn = document.getElementById("viewList");
+  const grid = document.getElementById("productsGrid");
+  if (!gridBtn || !listBtn || !grid) return;
+
+  gridBtn.addEventListener("click", () => {
+    state.view = "grid";
+    grid.classList.remove("list-view");
+    gridBtn.classList.add("active");
+    listBtn.classList.remove("active");
+  });
+
+  listBtn.addEventListener("click", () => {
+    state.view = "list";
+    grid.classList.add("list-view");
+    listBtn.classList.add("active");
+    gridBtn.classList.remove("active");
+  });
+}
+
+/* ────────────────────────────────────────────
+   MOBILE SIDEBAR
+──────────────────────────────────────────── */
+function initSidebarToggle() {
+  const toggle = document.getElementById("filterToggle");
+  const sidebar = document.getElementById("sidebar");
+  if (!toggle || !sidebar) return;
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      sidebar.classList.contains("open") &&
+      !sidebar.contains(e.target) &&
+      !toggle.contains(e.target)
+    ) {
+      sidebar.classList.remove("open");
+    }
+  });
+}
+
+/* ────────────────────────────────────────────
+   APPLY FILTERS + SORT + ACTIVE TAGS
+──────────────────────────────────────────── */
+function applyFilters() {
+  const cards = Array.from(document.querySelectorAll(".p-card"));
+  let visibleCount = 0;
+
+  cards.forEach((card) => {
+    const cat = card.dataset.cat;
+    const price = Number(card.dataset.price);
+    const rating = Number(card.dataset.rating);
+
+    const catMatch = state.cats.has("all") || state.cats.has(cat);
+    const priceMatch = price <= state.maxPrice;
+    const ratingMatch = state.rating === "any" || rating >= Number(state.rating);
+
+    const show = catMatch && priceMatch && ratingMatch;
+    card.style.display = show ? "" : "none";
+    if (show) visibleCount++;
+  });
+
+  sortVisibleCards();
+  updateResultCount(visibleCount);
+  updateActiveFilterTags();
+  toggleNoResults(visibleCount);
+}
+
+function sortVisibleCards() {
+  const grid = document.getElementById("productsGrid");
+  if (!grid) return;
+  const cards = Array.from(grid.querySelectorAll(".p-card"));
+
+  const sorters = {
+    featured: () => 0,
+    "price-asc": (a, b) => Number(a.dataset.price) - Number(b.dataset.price),
+    "price-desc": (a, b) => Number(b.dataset.price) - Number(a.dataset.price),
+    rating: (a, b) => Number(b.dataset.rating) - Number(a.dataset.rating),
+    newest: (a, b) => (b.dataset.new === "true") - (a.dataset.new === "true")
+  };
+
+  const sorter = sorters[state.sort] || sorters.featured;
+  if (state.sort !== "featured") {
+    cards.sort(sorter).forEach((card) => grid.appendChild(card));
+  }
+}
+
+function updateResultCount(count) {
+  const el = document.getElementById("resultCount");
+  if (el) el.textContent = count;
+}
+
+function toggleNoResults(count) {
+  const noResults = document.getElementById("noResults");
+  const grid = document.getElementById("productsGrid");
+  if (!noResults || !grid) return;
+  noResults.classList.toggle("hidden", count !== 0);
+  grid.style.display = count === 0 ? "none" : "";
+}
+
+function updateActiveFilterTags() {
+  const wrap = document.getElementById("activeFilters");
+  if (!wrap) return;
+  wrap.innerHTML = "";
+
+  const labels = {
+    "sport-bra": "Sport Bras", leggings: "Leggings", set: "Activewear Sets",
+    bra: "Bras", body: "Bodysuits"
+  };
+
+  if (!state.cats.has("all")) {
+    state.cats.forEach((cat) => {
+      wrap.appendChild(makeTag(labels[cat] || cat, () => {
+        document.getElementById(`cat-${cat === "sport-bra" ? "sport" : cat === "leggings" ? "leg" : cat}`)?.click();
+      }));
+    });
+  }
+
+  if (state.maxPrice < 120) {
+    wrap.appendChild(makeTag(`Up to $${state.maxPrice}`, () => {
+      const priceRange = document.getElementById("priceRange");
+      priceRange.value = 120;
+      priceRange.dispatchEvent(new Event("input"));
+    }));
+  }
+
+  if (state.rating !== "any") {
+    wrap.appendChild(makeTag(`${state.rating}★ & Up`, () => {
+      document.querySelector('input[name="rating"][value="any"]').click();
+    }));
+  }
+}
+
+function makeTag(text, onRemove) {
+  const tag = document.createElement("div");
+  tag.className = "filter-tag";
+  tag.innerHTML = `<span>${text}</span><button aria-label="Remove filter">✕</button>`;
+  tag.querySelector("button").addEventListener("click", onRemove);
+  return tag;
+}
+
+/* ────────────────────────────────────────────
+   WISHLIST TOGGLE
+──────────────────────────────────────────── */
+function initWishlist() {
+  document.querySelectorAll(".wishlist-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      btn.classList.toggle("active");
+      btn.textContent = btn.classList.contains("active") ? "♥" : "♡";
+      btn.style.color = btn.classList.contains("active") ? "#c06090" : "";
+    });
+  });
+}
+
+/* ────────────────────────────────────────────
+   ADD TO CART (grid cards)
+──────────────────────────────────────────── */
+function initCartButtons() {
+  document.querySelectorAll(".p-cart-btn").forEach((btn) => {
+    btn.addEventListener("click", () => showToast());
+  });
+}
+
+function showToast() {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+/* ────────────────────────────────────────────
+   QUICK VIEW MODAL
+──────────────────────────────────────────── */
+function openQuick(index) {
+  quickProduct = PRODUCTS[index];
+  if (!quickProduct) return;
+
+  quickQty = 1;
+  quickSizeIdx = 0;
+
+  document.getElementById("modalImg").src = quickProduct.img;
+  document.getElementById("modalImg").alt = quickProduct.name;
+  document.getElementById("modalBrand").textContent = quickProduct.brand;
+  document.getElementById("modalName").textContent = quickProduct.name;
+  document.getElementById("modalDesc").textContent = quickProduct.desc;
+  document.getElementById("modalRating").innerHTML =
+    "★".repeat(quickProduct.rating) + "☆".repeat(5 - quickProduct.rating) +
+    ` <span>(${quickProduct.reviews})</span>`;
+
+  const priceHtml = quickProduct.oldPrice
+    ? `$${quickProduct.price.toFixed(2)} <span style="text-decoration:line-through;color:var(--text-muted);font-size:0.9rem;font-weight:400;margin-left:8px;">$${quickProduct.oldPrice.toFixed(2)}</span>`
+    : `$${quickProduct.price.toFixed(2)}`;
+  document.getElementById("modalPrice").innerHTML = priceHtml;
+
+  document.getElementById("modalColors").innerHTML = quickProduct.colors
+    .map((c, i) => `<span class="p-dot${i === 0 ? " active" : ""}" style="background:${c};width:26px;height:26px;" data-idx="${i}"></span>`)
+    .join("");
+
+  document.querySelectorAll("#modalColors .p-dot").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      document.querySelectorAll("#modalColors .p-dot").forEach((d) => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+
+  document.getElementById("modalThumbs").innerHTML = "";
+
+  document.getElementById("qtyVal").textContent = quickQty;
+  setActiveSize(quickSizeIdx);
+
+  document.getElementById("modalOverlay").classList.add("show");
+  document.getElementById("quickModal").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeQuick() {
+  document.getElementById("modalOverlay").classList.remove("show");
+  document.getElementById("quickModal").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+function changeQty(delta) {
+  quickQty = Math.max(1, quickQty + delta);
+  document.getElementById("qtyVal").textContent = quickQty;
+}
+
+function setActiveSize(idx) {
+  document.querySelectorAll(".msz").forEach((btn, i) => {
+    btn.classList.toggle("active", i === idx);
+  });
+}
+
+function initModalSizeQty() {
+  document.querySelectorAll(".msz").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      quickSizeIdx = i;
+      setActiveSize(i);
+    });
+  });
+
+  const modalCartBtn = document.getElementById("modalCartBtn");
+  if (modalCartBtn) {
+    modalCartBtn.addEventListener("click", () => {
+      closeQuick();
+      showToast();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeQuick();
+  });
+}
+
+/* Expose functions used inline in HTML */
+window.openQuick = openQuick;
+window.closeQuick = closeQuick;
+window.changeQty = changeQty;
+window.resetAllFilters = resetAllFilters;
+</script>
+</body>
+
+</html>
